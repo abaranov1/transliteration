@@ -12,7 +12,7 @@ class IKAO20122016Test {
     void simpleTest(){
         Transliterator transliterator = TransliteratorFactory.createTransliteratorByType(TransliterationType.RUSSIAN_IKAO_2012_2016);
         String expected = "Privet!";
-        String actual = transliterator.start("Привет!");
+        String actual = transliterator.transliterate("Привет!");
         assertEquals(expected, actual);
     }
 
@@ -20,28 +20,28 @@ class IKAO20122016Test {
     void allAlphabetTests(){
         Transliterator transliterator = TransliteratorFactory.createTransliteratorByType(TransliterationType.RUSSIAN_IKAO_2012_2016);
         String alphabet = "абвгдеёжзиклмнопрестуфхцчшщьыъэюя";
-        assertDoesNotThrow(()->transliterator.start(alphabet));
+        assertDoesNotThrow(()->transliterator.transliterate(alphabet));
     }
 
     @Test
     void notCharactersWereNotTransliterated(){
         Transliterator transliterator = TransliteratorFactory.createTransliteratorByType(TransliterationType.RUSSIAN_IKAO_2012_2016);
         String expected = "$5 - $^&*";
-        String actual = transliterator.start(expected);
+        String actual = transliterator.transliterate(expected);
         assertEquals(expected, actual);
     }
 
     @Test
     void unexpectedCharactersError(){
         Transliterator transliterator = TransliteratorFactory.createTransliteratorByType(TransliterationType.RUSSIAN_IKAO_2012_2016);
-        assertThrows(RuntimeException.class, () -> transliterator.start("Apple"));
+        assertThrows(RuntimeException.class, () -> transliterator.transliterate("Apple"));
     }
 
     @Test
     void multiCharCharactersCapitalization(){
         Transliterator transliterator = TransliteratorFactory.createTransliteratorByType(TransliterationType.RUSSIAN_IKAO_2012_2016);
         String expected = "Shchuka";
-        String actual = transliterator.start("Щука");
+        String actual = transliterator.transliterate("Щука");
         assertEquals(expected, actual);
     }
 }

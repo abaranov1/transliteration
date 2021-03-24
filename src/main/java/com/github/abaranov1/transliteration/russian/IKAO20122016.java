@@ -9,15 +9,20 @@ import java.util.Map;
 
 public class IKAO20122016 extends AbstactTransliterator implements Transliterator {
 
-    @Override
-    public void initCache() {
-        Map<String, String> cache = new HashMap<>();
+    private static Map<String, String> cache = new HashMap<>();
+
+    {
         cache.put("а","a");
         cache.put("б", "b");
         cache.put("в", "v");
         cache.put("г", "g");
         cache.put("д", "d");
+        cache.put("е", "e");
+        cache.put("ё","e");
+        cache.put("ж", "zh");
         cache.put("з", "z");
+        cache.put("и", "i");
+        cache.put("й", "i");
         cache.put("к", "k");
         cache.put("л", "l");
         cache.put("м", "m");
@@ -29,12 +34,6 @@ public class IKAO20122016 extends AbstactTransliterator implements Transliterato
         cache.put("т", "t");
         cache.put("у", "u");
         cache.put("ф", "f");
-
-        cache.put("е", "e");
-        cache.put("ё","e");
-        cache.put("ж", "zh");
-        cache.put("и", "i");
-        cache.put("й", "i");
         cache.put("х", "kh");
         cache.put("ц", "ts");
         cache.put("ч", "ch");
@@ -46,6 +45,10 @@ public class IKAO20122016 extends AbstactTransliterator implements Transliterato
         cache.put("э", "e");
         cache.put("ю", "iu");
         cache.put("я", "ya");
+    }
+
+    @Override
+    public void initCache() {
         setCache(cache);
     }
 }

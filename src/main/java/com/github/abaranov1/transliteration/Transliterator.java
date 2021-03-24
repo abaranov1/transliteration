@@ -2,6 +2,6 @@ package com.github.abaranov1.transliteration;
 
 
 public interface Transliterator {
-    String start(String text);
+    String transliterate(String text);
     void initCache();
 }

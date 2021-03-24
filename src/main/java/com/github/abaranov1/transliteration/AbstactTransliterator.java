@@ -10,7 +10,7 @@ public abstract class AbstactTransliterator {
         this.cache = cache;
     }
 
-    public String start(String text){
+    public String transliterate(String text){
         StringBuilder builder = new StringBuilder();
         for(int i = 0; i <= text.length() - 1; i++){
             char character = text.charAt(i);
