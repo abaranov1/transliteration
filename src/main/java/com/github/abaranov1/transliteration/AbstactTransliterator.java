@@ -21,7 +21,15 @@ public abstract class AbstactTransliterator {
                 }
                 if(!opposite.equals("-")){
                     boolean isLowerCase = Character.isLowerCase(character);
-                    builder.append(isLowerCase ? opposite: opposite.toUpperCase());
+                    int oppositeCharLength = opposite.length();
+                    if(!isLowerCase){
+                        if(oppositeCharLength > 1){
+                            opposite = opposite.substring(0, 1).toUpperCase() + opposite.substring(1);
+                        }else{
+                            opposite = opposite.toUpperCase();
+                        }
+                    }
+                    builder.append(opposite);
                 }
             }else{
                 builder.append(character);

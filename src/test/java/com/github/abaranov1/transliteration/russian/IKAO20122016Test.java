@@ -36,4 +36,12 @@ class IKAO20122016Test {
         Transliterator transliterator = TransliteratorFactory.createTransliteratorByType(TransliterationType.RUSSIAN_IKAO_2012_2016);
         assertThrows(RuntimeException.class, () -> transliterator.start("Apple"));
     }
+
+    @Test
+    void multiCharCharactersCapitalization(){
+        Transliterator transliterator = TransliteratorFactory.createTransliteratorByType(TransliterationType.RUSSIAN_IKAO_2012_2016);
+        String expected = "Shchuka";
+        String actual = transliterator.start("Щука");
+        assertEquals(expected, actual);
+    }
 }
