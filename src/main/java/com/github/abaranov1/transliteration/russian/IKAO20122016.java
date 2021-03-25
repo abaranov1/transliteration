@@ -45,10 +45,6 @@ public class IKAO20122016 extends AbstactTransliterator implements Transliterato
         cache.put("э", "e");
         cache.put("ю", "iu");
         cache.put("я", "ya");
-    }
-
-    @Override
-    public void initCache() {
         setCache(cache);
     }
 }

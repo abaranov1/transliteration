@@ -15,7 +15,6 @@ public class TransliteratorFactory {
 
     public static Transliterator createTransliteratorByType(TransliterationType type){
         Transliterator transliterator = transliteratorMapping.get(type);
-        transliterator.initCache();
         return transliterator;
     }
 
