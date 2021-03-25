@@ -1,6 +1,6 @@
 package com.github.abaranov1.transliteration;
 
-import com.github.abaranov1.transliteration.exception.TransliteratorClassException;
+import com.github.abaranov1.transliteration.exception.TransliteratorClassNotFoundException;
 import com.github.abaranov1.transliteration.exception.TransliteratorInstantiationException;
 import com.github.abaranov1.transliteration.russian.IKAO20122016;
 
@@ -19,7 +19,7 @@ public class TransliteratorFactory {
     public static Transliterator createTransliteratorByType(TransliterationType type){
         Class<? extends AbstactTransliterator> transliteratorClass = transliteratorMapping.get(type);
         if(transliteratorClass == null){
-            throw new TransliteratorClassException(String.format("Could not find class for type %s", type));
+            throw new TransliteratorClassNotFoundException(String.format("Could not find class for type %s", type));
         }
 
         Transliterator transliterator;
