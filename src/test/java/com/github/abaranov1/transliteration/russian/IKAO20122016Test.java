@@ -25,6 +25,12 @@ class IKAO20122016Test {
     }
 
     @Test
+    void Julia(){
+        String actual = transliterator.transliterate("Юлия");
+        assertEquals("Iuliya", actual);
+    }
+
+    @Test
     void allAlphabet(){
         String alphabet = "абвгдеёжзиклмнопрестуфхцчшщьыъэюя";
         assertDoesNotThrow(()->transliterator.transliterate(alphabet));
