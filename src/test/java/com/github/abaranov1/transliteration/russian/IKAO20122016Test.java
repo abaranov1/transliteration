@@ -18,7 +18,7 @@ class IKAO20122016Test {
     }
 
     @Test
-    void allAlphabetTests(){
+    void allAlphabet(){
         Transliterator transliterator = TransliteratorFactory.createTransliteratorByType(TransliterationType.RUSSIAN_IKAO_2012_2016);
         String alphabet = "абвгдеёжзиклмнопрестуфхцчшщьыъэюя";
         assertDoesNotThrow(()->transliterator.transliterate(alphabet));
