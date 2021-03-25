@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class IKAO20122016 extends AbstactTransliterator implements Transliterator {
 
-    private static Map<String, String> cache = new HashMap<>();
+    private final Map<String, String> cache = new HashMap<>();
 
     {
         cache.put("а","a");

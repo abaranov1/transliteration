@@ -1,5 +1,7 @@
 package com.github.abaranov1.transliteration;
 
+import com.github.abaranov1.transliteration.exception.IllegalLetterException;
+
 import java.util.Map;
 
 public abstract class AbstactTransliterator {
@@ -17,7 +19,7 @@ public abstract class AbstactTransliterator {
             if(Character.isLetter(character)){
                 String opposite = cache.get(String.valueOf(character).toLowerCase());
                 if(opposite == null) {
-                    throw new RuntimeException(String.format("Could not find letter for: %s", Character.toLowerCase(character)));
+                    throw new IllegalLetterException(String.format("Could not find letter for: %s", Character.toLowerCase(character)));
                 }
                 if(!opposite.equals("-")){
                     boolean isLowerCase = Character.isLowerCase(character);
